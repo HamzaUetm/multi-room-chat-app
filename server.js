@@ -74,6 +74,8 @@ io.on("connection", function (socket) {
   });
 });
 
-server.listen(5000, function () {
-  console.log("Listening to port 5000.");
+// ✅ Use process.env.PORT for deployment on Railway
+const PORT = process.env.PORT || 5000;
+server.listen(PORT, function () {
+  console.log(`Listening to port ${PORT}.`);
 });
